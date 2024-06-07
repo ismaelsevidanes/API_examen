@@ -15,7 +15,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 import com.examen.api.dtos.response.error.ErrorDetailsResponse;
 import com.examen.api.error.exception.UsuarioNotFoundException;
 
-
+// Ejercicio 2 apartado b
 @ControllerAdvice
 public class GlobalExceptionHandler {
 	/**

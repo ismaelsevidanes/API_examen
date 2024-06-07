@@ -42,8 +42,6 @@ public class InicializarDatos implements CommandLineRunner {
         usuarioAdmin = new Usuario();
         usuarioAdmin.setNombre("Ismael");
         usuarioAdmin.setApellidos("Sevidanes");
-        usuarioAdmin.setDireccion("Calle Ismael");
-        usuarioAdmin.setTelefono(666666666);
         usuarioAdmin.setEmail("ismael.sevidanes@example.com");
         usuarioAdmin.setPassword("admin");
         usuarioAdmin.getRoles().add(Role.ROLE_ADMIN);
@@ -58,8 +56,6 @@ public class InicializarDatos implements CommandLineRunner {
         usuarioUser = new Usuario();
         usuarioUser.setNombre("Mamuel");
         usuarioUser.setApellidos("Rodriguez");
-        usuarioAdmin.setDireccion("Calle Manuel");
-        usuarioAdmin.setTelefono(111111111);
         usuarioUser.setEmail("manuel.rodriguez@example.com");
         usuarioUser.setPassword("user");
         usuarioUser.getRoles().add(Role.ROLE_USER);
@@ -72,8 +68,6 @@ public class InicializarDatos implements CommandLineRunner {
         usuario = new Usuario();
         usuario.setNombre("usuario");
         usuario.setApellidos("usuario");
-        usuarioAdmin.setDireccion("Calle User");
-        usuarioAdmin.setTelefono(222222222);
         usuario.setEmail("usuario");
         usuario.setPassword("usuario");
         usuario.getRoles().add(Role.ROLE_USER);

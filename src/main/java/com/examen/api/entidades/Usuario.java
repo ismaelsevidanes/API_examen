@@ -54,11 +54,6 @@ public class Usuario implements UserDetails {
 	   @Size(min=1, max = 35, message = "Un mínimo de 1 y máximo de 25 caracteres") // Limita la longitud 
 	    private String apellidos;
 	    
-	    @NotBlank(message = "El telefono no puede estar vacío") // Asegura que no sea null o esté vacío
-	    private Integer telefono;
-	    
-	    @NotBlank(message = "La direccion no puede estar vacío") // Asegura que no sea null o esté vacío
-	    private String direccion;
 	    
 	    @NotBlank(message = "El email no puede estar vacío") // Asegura que no sea null o esté vacío
 	    private String email;
@@ -113,21 +108,6 @@ public class Usuario implements UserDetails {
 	        this.apellidos = apellidos;
 	    }
 	    
-		public Integer getTelefono() {
-			return telefono;
-		}
-	    
-	    public void setTelefono(Integer telefono) {
-	        this.telefono = telefono;
-	    }
-	    
-	    public String getDireccion() {
-			return direccion;
-		}
-	    
-	    public void setDireccion(String direccion) {
-	        this.direccion = direccion;
-	    }
 	    
 		public String getEmail() {
 			return email;
@@ -189,12 +169,7 @@ public class Usuario implements UserDetails {
 			return null;
 		}
 		
-		@Override
-		public String toString() {
-			return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", telefono=" + telefono
-					+ ", direccion=" + direccion + ", email=" + email + ", password=" + password + ", roles=" + roles
-					+ "]";
-		}
+
 		
 		 public static UsuarioBuilder builder() {
 		        return new UsuarioBuilder();
@@ -204,8 +179,6 @@ public class Usuario implements UserDetails {
 		        private Long id;
 		        private String nombre;
 		        private String apellidos;
-		        private Integer telefono;
-		        private String direccion;
 		        private String email;
 		        private String password;
 		        private Set<Role> roles = new HashSet<>();
@@ -227,16 +200,6 @@ public class Usuario implements UserDetails {
 		            this.apellidos = apellidos;
 		            return this;
 		        }
-		        
-				public UsuarioBuilder telefono(Integer telefono) {
-					this.telefono = telefono;
-					return this;
-				}
-				
-				public UsuarioBuilder direccion(String direccion) {
-					this.direccion = direccion;
-					return this;
-				}
 
 		        public UsuarioBuilder email(String email) {
 		            this.email = email;
@@ -258,8 +221,6 @@ public class Usuario implements UserDetails {
 		        	usuario.setId(id);
 		        	usuario.setNombre(nombre);
 		        	usuario.setApellidos(apellidos);
-		        	usuario.setTelefono(telefono);
-		        	usuario.setDireccion(direccion);
 		        	usuario.setEmail(email);
 		        	usuario.setPassword(password);
 		        	usuario.setRoles(roles);

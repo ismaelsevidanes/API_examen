@@ -2,17 +2,12 @@ package com.examen.api.servicios;
 
 import org.springframework.stereotype.Service;
 
-
-
-
-
 import com.examen.api.dtos.UsuarioDTO;
 import com.examen.api.entidades.Usuario;
 
 import java.util.List;
 
 
-import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -39,11 +34,12 @@ public interface UsuarioService {
     List<UsuarioDTO> obtenerTodos();
 
     
+    Usuario agregarUsuario(Usuario usuario);
     Page<Usuario> getAllUsuario(Pageable pageable);
-    Optional<Usuario> getUsuarioById(Long id);
+    Usuario getUsuarioById(Long id);
     Usuario saveUsuario(Usuario venta);
-    Boolean deleteUsuario(Long id);
-    Usuario updateUsuario(Long id, Usuario venta);
+    void deleteUsuario(Long id);
+    Usuario updateUsuario(Long id, Usuario usuario);
     Page<Usuario> filtrarUsuario(String fecha, Pageable pageable);
 
 	

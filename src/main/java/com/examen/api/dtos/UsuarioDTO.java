@@ -3,6 +3,7 @@ package com.examen.api.dtos;
 /**
  * DTO (Data Transfer Object) representa un usuario. Se utiliza para transferir
  * información de la aplicación.
+ * Ejercicio 1 apartado b
  */
 
 public class UsuarioDTO {
