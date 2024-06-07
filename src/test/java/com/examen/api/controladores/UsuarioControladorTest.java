@@ -52,14 +52,33 @@ class UsuarioControladorTest {
 
 	        Usuario usuario1= new Usuario();
 	        usuario1.setId(1L);
-	        usuario1.setNombre("Usuario 1");
+	        usuario1.setNombre("Ismael");
+	        usuario1.setApellidos("Sevidanes");
+	        usuario1.setEmail("email@email.es");
+	        usuario1.setPassword("1234");
+
 	        usuariosMock.add(usuario1);
 
 	        Usuario usuario2= new Usuario();
-	        usuario1.setId(1L);
-	        usuario1.setNombre("Usuario 1");
-	        usuariosMock.add(usuario1);
+	        usuario2.setId(1L);
+	        usuario2.setNombre("Usuario 2");
+	        usuario2.setEmail("email2@email.es");
+	        usuario2.setPassword("12345");
+	        usuariosMock.add(usuario2);
 	        
 	  	    }
+	    
+	 //   @Test
+//	    public void testListarUsuarios() throws Exception {
+//	    	 // Configura el comportamiento simulado del servicio de estudiantes
+//	        when(usuarioServicio.getAllUsuario()).thenReturn(usuariosMock);
+//
+//	        // Realiza una solicitud GET a la ruta "/usuarios" y espera un código de respuesta 200 (OK)
+//	        mockMvc.perform(get("/usuarios"))
+//	                .andExpect(status().isOk())
+//	                .andExpect(view().name("usuarios/lista")) // Verifica que se muestre la vista "lista-usuarios"
+//	                .andExpect(model().attributeExists("usuarios"));
+//	
+//	    }
 
 }

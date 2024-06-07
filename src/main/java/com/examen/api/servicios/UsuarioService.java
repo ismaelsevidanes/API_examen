@@ -42,6 +42,6 @@ public interface UsuarioService {
     Usuario updateUsuario(Long id, Usuario usuario);
     Page<Usuario> filtrarUsuario(String fecha, Pageable pageable);
 
-	
+ 
 
 }

@@ -39,32 +39,12 @@ import com.examen.api.entidades.Role;
 @RequiredArgsConstructor
 public class SecurityConfiguration {
 	
-	//@Autowired
-    //JwtAuthenticationFilter jwtAuthenticationFilter;
+
 	@Autowired
 	UsuarioService usuarioService;
 	
 
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .exceptionHandling(handling -> handling.authenticationEntryPoint(new JwtAuthenticationEntryPoint()))
-//                .authorizeHttpRequests(request -> request
-//                        .requestMatchers("/api//**").permitAll()
-//                        .requestMatchers(HttpMethod.GET, "/api/users/").hasAuthority(Role.ROLE_USER.toString())
-//                        .requestMatchers(HttpMethod.POST, "/api/users").hasAuthority(Role.ROLE_USER.toString())
-//                        .requestMatchers(HttpMethod.GET, "api/users/{id}").hasAuthority(Role.ROLE_USER.toString())
-//                        .requestMatchers(HttpMethod.PUT, "api/users/{id}").hasAuthority(Role.ROLE_USER.toString())
-//                        .requestMatchers(HttpMethod.DELETE, "/api/users/{id}").hasAuthority(Role.ROLE_USER.toString())
-//                    
-//                        .anyRequest().authenticated())
-//                .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//                .authenticationProvider(authenticationProvider());
-//                //.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-//
-//    return http.build();
-//    }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -73,7 +53,7 @@ public class SecurityConfiguration {
 	@Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-      .csrf(AbstractHttpConfigurer::disable)
+      // .csrf(AbstractHttpConfigurer::disable)
       .authorizeHttpRequests(request -> request
     		  .anyRequest().permitAll())
       .sessionManagement(manager ->  manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

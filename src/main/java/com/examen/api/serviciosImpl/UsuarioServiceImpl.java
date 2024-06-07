@@ -1,6 +1,7 @@
 package com.examen.api.serviciosImpl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,8 +32,13 @@ public class UsuarioServiceImpl  implements UsuarioService {
 
 	@Override
 	public List<UsuarioDTO> obtenerTodos() {
+//		return usuarioRepositorio.findAll().stream()
+//				.map(this::convertirAUsuarioDTO)
+//				.collect(Collectors.toList());
 		return null;
 	}
+	
+	
 
 	@Override
 	public Usuario agregarUsuario(Usuario usuario) {
@@ -79,5 +85,6 @@ public class UsuarioServiceImpl  implements UsuarioService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 }
