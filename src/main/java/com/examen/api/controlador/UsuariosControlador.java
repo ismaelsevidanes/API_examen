@@ -2,6 +2,7 @@ package com.examen.api.controlador;
 
 
 import org.slf4j.Logger;
+
 import org.slf4j.LoggerFactory;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -33,9 +34,9 @@ public class UsuariosControlador {
 	
 	private UsuarioService usuarioService;
 	
-	// Endpoint para obtener un listado de usuario
+	// Endpoint para obtener un listado de usuarios
     @GetMapping
-    @PreAuthorize("hasRole('ROLE_USER') || hasRole('ROLE_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_USER') || hasRole('ROLE_ADMIN')")
     public ResponseEntity<Page<Usuario>> getAllUsuario(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
@@ -52,12 +53,12 @@ public class UsuariosControlador {
     // CRUD endpoints, accesibles solo por ROLE_ADMIN
     // Crear un nuevo usuario
     @PostMapping
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_ADMIN')")
     public Usuario createUsuario(@RequestBody Usuario usuario) {
         return usuarioService.agregarUsuario(usuario);
     }
     
-	 // Leer un usuario por ID
+	 // Listar un usuario por ID
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_USER') || hasRole('ROLE_ADMIN')")
     public Usuario getUsuarioById(@PathVariable Long id) {
@@ -71,7 +72,7 @@ public class UsuariosControlador {
         return usuarioService.updateUsuario(id, UsuarioDetails);
     }
     
-    // Eliminar un libro
+    // Eliminar un usuario
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void deleteUsuario(@PathVariable Long id) {

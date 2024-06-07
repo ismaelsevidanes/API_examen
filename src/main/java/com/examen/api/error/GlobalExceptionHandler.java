@@ -66,22 +66,22 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
-//    /**
-//     * ####################################################
-//     * #     "Error interno del servidor" Exception 500   ##
-//     * #####################################################
-//     * @param ex
-//     * @param request
-//     * @return
-//     */
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<ErrorDetailsResponse> handleGlobalException(Exception ex, WebRequest request) {
-//    	ErrorDetailsResponse errorDetails = new ErrorDetailsResponse(
-//            new Date(),
-//            "Error interno del servidor",
-//            request.getDescription(false));
-//        return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
-//    }
+    /**
+     * ####################################################
+     * #     "Error interno del servidor" Exception 500   ##
+     * #####################################################
+     * @param ex
+     * @param request
+     * @return
+     */
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorDetailsResponse> handleGlobalException(Exception ex, WebRequest request) {
+    	ErrorDetailsResponse errorDetails = new ErrorDetailsResponse(
+            new Date(),
+            "Error interno del servidor",
+            request.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
     
     /**
      * ####################################################
