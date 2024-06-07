@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
 
 import com.examen.api.repositorios.UsuarioRepositorio;
 import com.examen.api.dtos.UsuarioDTO;
@@ -15,6 +16,7 @@ import com.examen.api.servicios.UsuarioService;
 
 import jakarta.validation.Valid;
 
+@Service
 public class UsuarioServiceImpl  implements UsuarioService {
 	
 
